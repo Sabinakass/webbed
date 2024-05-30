@@ -31,7 +31,7 @@ const ProfilePage = () => {
         </div>
         <div className="w-2/3 bg-white shadow-lg rounded-md p-5">
           <div className="flex justify-between items-center mb-5">
-            <h2 className="text-xl font-bold">Posts</h2>
+            <h2 className="text-xl text-black font-bold">Posts</h2>
           </div>
           <div className="posts-container">
             {userPosts.map((post, index) => (

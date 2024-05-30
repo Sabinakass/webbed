@@ -9,7 +9,7 @@ const Sidebar = () => {
   const threeUsers = allProfileAccounts.slice(0, 3);
 
   return (
-    <div className="sidebar bg-white rounded-xl mt-10 mr-4 w-96"> {/* Increased width to w-96 */}
+    <div className="sidebar bg-white rounded-xl mt-10 w-45"> {/* Increased width to w-96 */}
       <ul>
         {threeUsers.map((item, index) => (
           <li key={index}>

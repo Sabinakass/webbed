@@ -59,7 +59,7 @@ const Home = () => {
             <div className="w-full max-w-md">
                 <WalletMultiButton />
                 <div className="mt-5">
-                    <label className="text-lg font-bold mb-2 block">
+                    <label className="text-lg text-black font-bold mb-2 block">
                         Username <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -71,7 +71,7 @@ const Home = () => {
                     />
                 </div>
                 <div className="mt-5">
-                    <label className="text-lg font-bold mb-2 block">
+                    <label className="text-lg  text-black font-bold mb-2 block">
                         Tell us about yourself <span className="text-red-500">*</span>
                     </label>
                     <input

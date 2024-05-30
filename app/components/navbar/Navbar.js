@@ -28,7 +28,7 @@ export default function Navbar() {
   }, [initialized]);
 
   return (
-    <header className="flex justify-between border-b border-slate-200 px-10">
+    <header className="flex justify-between border-b border-slate-400 px-10 mb-4">
       <div className="flex items-center gap-4">
         <h1 className='text-black text-xl text-500'>Webbed</h1>
       </div>

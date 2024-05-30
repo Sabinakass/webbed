@@ -17,37 +17,7 @@ export function useUserProfile() {
     const { connection } = useConnection()
     const { publicKey } = useWallet()
     const anchorWallet = useAnchorWallet()
-    // const [metaplex, setMetaplex] = useState();
-    // console.log("rulik:", publicKey)
-    // console.log("rulik adress:", publicKey?.toBase58())
-    // useEffect(() => {
-    //     setMetaplex(
-    //       Metaplex.make(connection).use(
-    //         anchorWallet ? walletAdapterIdentity(anchorWallet) : guestIdentity()
-    //       )
-    //     );
-    //   }, [connection, anchorWallet]);
-
-    // const metaplex = useMemo(() => {
-    //     const metaplexInstance = Metaplex.make(connection)
-    //         .use(walletAdapterIdentity(anchorWallet))
-    //         // .use(irysStorage({
-    //         //     address: 'https://devnet.irys.xyz',
-    //         //     providerUrl: "https://snowy-long-patron.solana-devnet.quiknode.pro/e5d3c3687d54b13383f560248b0c18783557098a/",
-    //         //     timeout: 120000,
-    //         // }));
-    //     return metaplexInstance;
-    // }, [connection, anchorWallet]);
-    // console.log("rulik metaplex:", metaplex.operations)
-
-    // metaplex.use(walletAdapterIdentity(wallet));
-    // metaplex.use(bungl);
-    // console.log("rulik metaplex:", metaplex)
-
-    // const metaplex = useMemo(() => new Metaplex(connection), [connection]);
-    // useEffect(() => {
-    //     metaplex.use(walletAdapterIdentity(wallet));
-    // }, [wallet, metaplex]);
+    
 
 
     const [initialized, setInitialized] = useState(false)
@@ -137,50 +107,9 @@ export function useUserProfile() {
             fetchUserProfile();
         }, 1000); // 1000 ms delay (1 second)
     
-        return () => clearTimeout(delayFetch); // Cleanup timeout on component unmount or dependency change
+        return () => clearTimeout(delayFetch); 
     }, [publicKey, program, transactionPending]);
-    // useEffect(() => {
-    //     const findUserProfile = async () => {
-    //         if (program && publicKey && !transactionPending) {
-    //             try {
-    //                 setLoading(true)
-    //                 const [profilePda, _] = await findProgramAddressSync([utf8.encode('USER_STATE'), publicKey.toBuffer()], program.programId)
-    //                 const profileAccount = await program.account.userProfile.fetch(profilePda)
-    //                 const allProfileAccounts = await program.account.userProfile.all()
-    //                 // console.log(allProfileAccounts)
-    //                 // console.log(typeof allProfileAccounts)
-    //                 setAllProfileAccounts(allProfileAccounts)
-    //                 if (profileAccount) {
-    //                     setInitialized(true)
-    //                     setName(profileAccount.name)
-    //                     setProfilePicture(profileAccount.profilePicture)
-    //                     const pendingRequestsReceived = profileAccount.pendingRequestsReceived.map(pk => pk.toBase58());
-    //                     setRequests(pendingRequestsReceived);
-    //                     const pendingRequestsSent = profileAccount.pendingRequestsSent.map(pk => pk.toBase58());
-    //                     setSentRequests(pendingRequestsSent);
-
-    //                     setLastPost(profileAccount.lastPost)
-
-    //                     const friends = profileAccount.friends.map(pk => pk.toBase58());
-    //                     setFriends(friends);
-
-    //                     await fetchUserPosts(publicKey); // Fetch posts after user profile is fetched
-                        
-    //                 } else {
-    //                     setInitialized(false)
-    //                 }
-    //             } catch (error) {
-    //                 console.log(error)
-    //                 setInitialized(false)
-    //             } finally {
-    //                 setLoading(false)
-    //             }
-    //         }
-    //     }
-
-    //     fi                const [profilePda, _] = findProgramAddressSync([utf8.encode('USER_STATE'), publicKey.toBuffer()], program.programId)
-//ndUserProfile()
-    // }, [publicKey, program, transactionPending])
+    
 
     const initializeUser = async (username, bio, profilePictureUrl) => {
         if (program && publicKey) {

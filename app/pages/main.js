@@ -87,6 +87,9 @@ const MainPage = () => {
             <Navbar />  
             <WalletMultiButton />
             <div className="flex">
+            <div className="w-1/3 ml-3"> 
+                    <Sidebar />
+                </div>
                 <div className="w-3/4"> 
                     <div className="posts-container">
                         {combinedPosts.map((post, index) => (
@@ -105,9 +108,7 @@ const MainPage = () => {
                         ))}
                     </div>
                 </div>
-                <div className="w-1/3"> 
-                    <Sidebar />
-                </div>
+                
             </div>
             
 
