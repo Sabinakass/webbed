@@ -5,7 +5,7 @@ import { useUserProfile } from '../hooks/todo';
 import { useRouter } from 'next/router';
 
 const NotificationsPage = () => {
-    const { initialized, initializeUser, loading, transactionPending, sendFriendRequest, rejectFriendRequest, allProfileAccounts, acceptFriendRequest, friends, name, requests, sentRequests } = useUserProfile();
+    const { initialized, initializeUser, loading, transactionPending, sendFriendRequest, rejectFriendRequest, allProfileAccounts, bio, acceptFriendRequest, friends, name, requests, sentRequests } = useUserProfile();
     const [pendingRequestsUsers, setPendingRequestsUsers] = useState([]);
     const router = useRouter();
 
@@ -31,17 +31,21 @@ const NotificationsPage = () => {
                             <p className='text-gray-300'>No pending friend requests</p>
                         </div>
                     ) : (
-                        <ul className='bg-gray-800 w-1/2 flex flex-col h-96 rounded-md p-2'>
+                        <ul className='bg-white bg-800 w-1/2 flex flex-col h-40 rounded-md p-2'>
                             {pendingRequestsUsers.map((item, index) => (
                                 <li key={index} className=''>
                                     <div className='flex gap-5 p-3 items-center'>
                                         <div className="bg-white w-10 h-10 rounded-full flex justify-center items-center">
-                                            {/* You can add an avatar or icon here */}
+                                        <img
+                                        src={item.account.profilePicture}
+                                        alt="Profile"
+                                        className="w-10 h-10 rounded-full"
+                                    />
                                         </div>
                                         <div className='flex flex-col justify-center gap-1'>
-                                            <p className='font-bold'>{item.account.name}</p>
-                                            <p className='text-gray-300'>IT-recruiter at Ozon Tech</p>
-                                            {/* <p>{item.publicKey.toString()}</p> */}
+                                            <p className='font-bold text-black '>{item.account.name}</p>
+                                            <p className='text-black text-300'>{bio}</p>
+                                           
                                         </div>
                                         <div className="flex gap-2">
                                             <button className="bg-green-500 p-2 rounded-md hover:bg-green-400 text-white text-lg" onClick={() => acceptFriendRequest(item.publicKey.toString())}>Accept</button>

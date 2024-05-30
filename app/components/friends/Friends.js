@@ -12,7 +12,7 @@ export default function Friends() {
 
     return (
         <div>
-            <ul className='flex flex-col bg-white bg-800 h-96 rounded-md p-2'>
+            <ul className='flex flex-col bg-white bg-800 h-50 rounded-md p-2'>
                 <p className='text-lg font-bold text-center'>Friends:</p>
                 {allFriends.length === 0 ? (
                     <div className='flex justify-center items-center h-full'>
@@ -31,8 +31,8 @@ export default function Friends() {
                                     />
                                 
                                 <div className='flex flex-col justify-center gap-1'>
-                                    <p className='font-bold'>{item.account.name}</p>
-                                    <p className='text-gray-300'>{bio}</p>
+                                    <p className='font-bold text-black'>{item.account.name}</p>
+                                    <p className='text-black text-300'>{bio}</p>
                                     {/* <p>{item.publicKey.toString()}</p> */}
                                 </div>
                                 <button className='bg-red-500 rounded-md p-2 ml-5' onClick={() => removeFriend(item.publicKey.toString())}>Remove Friend</button>

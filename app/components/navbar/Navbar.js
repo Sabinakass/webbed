@@ -19,12 +19,7 @@ export default function Navbar() {
     setShowDropdown(!showDropdown);
   };
 
-  const handleLogout = () => {
-    setLoggedIn(false);
-
-    // Redirect the user to the login page
-    router.push('/login');
-  };
+ 
   useEffect(() => {
     if (initialized) {
       setShowModal(false);
@@ -35,8 +30,7 @@ export default function Navbar() {
   return (
     <header className="flex justify-between border-b border-slate-200 px-10">
       <div className="flex items-center gap-4">
-        <img src="/linkedin-symbol.png" alt="Logo" className="w-16 p-3" />
-        
+        <h1 className='text-black text-xl text-500'>Webbed</h1>
       </div>
 
       <ul className="flex items-center gap-10">
